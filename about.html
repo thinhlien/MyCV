@@ -31,6 +31,52 @@
     <!-- Favicons
 	================================================== -->
     <link rel="shortcut icon" href="favicon.png">
+    <style>
+        td>button {
+            margin: 2px 6px 2px 6px;
+
+            box-sizing: border-box;
+            width: 48%;
+            display: inline;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 5px;
+            text-align: left;
+            color: black;
+        }
+
+        td {
+            color: aqua;
+        }
+
+        th {
+            background-color: white;
+            border: 3px solid black;
+            font-weight: bolder;
+
+        }
+
+        label {
+            color: antiquewhite;
+        }
+
+        .pag {
+            color: bisque;
+            margin: 0;
+        }
+
+        .pag:hover {
+            color: #F06000;
+        }
+    </style>
 
 </head>
 
@@ -60,7 +106,8 @@
                     <span>webdesigner</span> creating awesome and
                     effective visual identities for companies of all sizes around the globe. Let's <a
                         class="smoothscroll" href="#about">start scrolling</a>
-                    and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+                    and learn more <a class="smoothscroll" href="#about">about me</a>.
+                </h3>
                 <hr />
                 <ul class="social">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -136,28 +183,46 @@
         <div class="bar black">
             <button class="bar-item buttuon" onclick="openTab('Requirement')">Requirement</button>
             <button class="bar-item buttuon" onclick="openTab('Tab-design')">Tab-design</button>
-            <button class="bar-item buttuon" onclick="openTab('implement')">implement</button>
+            <button class="bar-item buttuon" onclick="openTab('implement')">Implement</button>
         </div>
 
         <!-- /////////////////////////////////////// -->
-        <div id="implement" class="lab4 MyContainer" style="display:none">
-            <h1 style="color: white;">Quản lý Sinh viên</h1>
+        <div id="implement" class="lab4 MyContainer" style="display:none; height: 1100PX;">
 
-            <form id="studentForm">
-                <label style="color: white;" for="fullName">Họ tên:</label>
-                <input type="text" id="fullName" name="fullName" required>
 
+            <h1 style="color: antiquewhite;">Quản lý Sinh viên</h1>
+
+            <!-- Form thêm Sinh viên -->
+            <form style="margin-bottom: 20px; color: aqua;" id="studentForm">
+                <label for="fullName">Họ tên:</label>
+                <input type="text" id="fullName" required>
+
+                <label for="className">Lớp:</label>
+                <input type="text" id="className" required>
+
+                <label for="gmail">Gmail:</label>
+                <input type="email" id="gmail" required>
 
                 <button type="button" onclick="addStudent()">Thêm</button>
             </form>
 
-            <ul id="studentList">
-            </ul>
+            <!-- Danh sách Sinh viên -->
+            <label style="margin-top: 9px;" for="search">Tìm kiếm:</label>
+            <input type="text" id="search" oninput="searchFunction()">
+            <table id="studentList">
+                <tr>
+                    <th>HỌ TÊN</th>
+                    <th style="background-color: wheat;">LỚP</th>
+                    <th>GMAIL</th>
+                    <th style="background-color: wheat;">THAO TÁC</th>
+                </tr>
+            </table>
 
-            <label style="color: white;" for="search">Tìm kiếm:</label>
-            <input type="text" id="search" name="search">
+            <!-- Ô tìm kiếm -->
 
-            <button onclick="searchFunction()">Tìm kiếm</button>
+
+            <!-- Include JavaScript -->
+
         </div>
         <!-- /////////////////////////////////////// -->
         <div id="Requirement" class="lab4 MyContainer">
@@ -166,27 +231,55 @@
                     lý đối tượng đó trên html bao gồm các tính năng thêm, sửa, xóa, tìm kiếm cho đối tượng đó. Ví dụ,
                     làm chức năng Quản lý Sinh viên, bao gôm tính năng thêm, sửa, xóa, tìm kiếm. Chú ý: Các thành viên
                     trong lớp, trong nhóm không được chọn các đối tượng giống nhau.
-                    Tạo 1 menu Lab4 trên website cá nhân (sử dụng thẻ <a> trong html) bao gồm các tab sau:</i><br>
+                    Tạo 1 menu Lab4 trên website cá nhân bao gồm các tab sau:</i><br>
 
-                <b>1. Tab Requirement:</b> copy lại nội dung của phần 1 ở trên (Yêu cầu) vào đây (và trình bày lại cho
-                đẹp) <br>
-                <b>2. Tab Design:</b> để link tới các file sau đây: <br>
+            <p class="pag"><b>1. Tab Requirement:</b> copy lại nội dung của phần 1 ở trên (Yêu cầu) vào đây (và trình
+                bày lại cho
+                đẹp) <br></p>
+            <p class="pag"><b>2. Tab Design:</b> để link tới các file sau đây: <br>
                 Thiết kế trên giấy (chụp lại ảnh) (có nút Download để tải ảnh về) <br>
                 Chụp lại màn hình đã thiết kế trên HTML (có nút Download và Go to Figma để link tới link Figma - share ở
-                dạng file để cô có thể coi từng thành phần) <br>
-                <b>3. Tab Implement:</b> là trang html của chức năng Quản lý đó <br>
+                dạng file để cô có thể coi từng thành phần) <br></p>
+            <p class="pag"><b>3. Tab Implement:</b> là trang html của chức năng Quản lý đó <br></p>
             </p>
         </div>
         <!-- /////////////////////////////////////// -->
         <div id="Tab-design" class="lab4 MyContainer" style="display:none">
-            <a style="padding: 10px;margin: 5px;background-color: bisque; border-radius: 10%;" href="">DOWNLOAD</a>
-            <a style="padding: 10px;margin: 5px;background-color: bisque; border-radius: 10%;" href="">GO TO FIGMA</a>
+            <img id="downloadImage" src="images/myPic.jpg" style="display: none;" alt="">
+            <!-- <a style="padding: 10px;margin: 5px;background-color: bisque; border-radius: 10%;" href="">DOWNLOAD</a> -->
+            <button style="padding: 10px;margin: 5px;color: #11ABB0;background-color: bisque; border-radius: 10%;"
+                onclick="downloadImage()">DOWNLOAD</button>
+            <a target="_blank"
+                style=" font-weight: bolder;padding: 15px;margin: 5px;background-color: bisque; border-radius: 10%;"
+                href="https://www.figma.com/file/uzD3F6Qjn2WmnTLNAErelS/Untitled?type=whiteboard&node-id=0%3A1&t=vQVHe6iuccoemxwk-1">GO
+                TO FIGMA</a>
 
         </div>
 
     </div>
     <!-- Java Script
    ================================================== -->
+    <script>
+        function downloadImage() {
+            // Lấy đối tượng hình ảnh
+            var image = document.getElementById("downloadImage");
+
+            // Tạo một liên kết (a) ẩn để tải xuống
+            var link = document.createElement('a');
+            link.href = image.src;
+            link.download = 'downloaded-image.jpg';
+
+            // Kích hoạt sự kiện click cho liên kết
+            var clickEvent = new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+
+            // Kích hoạt sự kiện click
+            link.dispatchEvent(clickEvent);
+        }
+    </script>
     <script>
         function openTab(tabName) {
             var i;
@@ -197,66 +290,85 @@
             document.getElementById(tabName).style.display = "block";
         }
     </script>
-<script>
-    function addStudent() {
-        var fullName = document.getElementById("fullName").value;
-        var studentList = document.getElementById("studentList");
+    <script>
 
-        var listItem = document.createElement("li");
-        listItem.textContent = fullName;
+        function addStudent() {
+            var fullName = document.getElementById("fullName").value;
+            var className = document.getElementById("className").value;
+            var gmail = document.getElementById("gmail").value;
 
-        var editButton = document.createElement("button");
-        editButton.textContent = "Sửa";
-        editButton.onclick = function() {
-            editStudent(listItem);
-        };
+            var studentList = document.getElementById("studentList");
 
-        var deleteButton = document.createElement("button");
-        deleteButton.textContent = "Xóa";
-        deleteButton.onclick = function() {
-            deleteStudent(listItem);
-        };
+            var row = studentList.insertRow(-1);
 
-        listItem.appendChild(editButton);
-        listItem.appendChild(deleteButton);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
 
-        studentList.appendChild(listItem);
+            cell1.textContent = fullName;
+            cell2.textContent = className;
+            cell3.textContent = gmail;
 
-        document.getElementById("studentForm").reset();
-    }
+            var editButton = document.createElement("button");
+            editButton.textContent = "Sửa";
+            editButton.onclick = function () {
+                editStudent(row);
+            };
 
-    function editStudent(listItem) {
-        var studentName = listItem.textContent;
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Xóa";
+            deleteButton.onclick = function () {
+                deleteStudent(row);
+            };
 
-        var newFullName = prompt("Nhập thông tin mới cho Sinh viên:", studentName);
+            cell4.appendChild(editButton);
+            cell4.appendChild(deleteButton);
 
-        if (newFullName !== null) {
-            listItem.textContent = newFullName;
+            document.getElementById("studentForm").reset();
         }
-    }
 
-    function deleteStudent(listItem) {
-        var confirmDelete = confirm("Bạn có chắc muốn xóa Sinh viên này?");
+        function editStudent(row) {
+            var fullName = prompt("Nhập họ và tên mới:", row.cells[0].textContent);
+            var className = prompt("Nhập lớp mới:", row.cells[1].textContent);
+            var gmail = prompt("Nhập gmail mới:", row.cells[2].textContent);
 
-        if (confirmDelete) {
-            listItem.remove();
-        }
-    }
-
-    function searchFunction() {
-        var searchValue = document.getElementById("search").value.toLowerCase();
-        var studentItems = document.getElementById("studentList").getElementsByTagName("li");
-
-        for (var i = 0; i < studentItems.length; i++) {
-            var studentName = studentItems[i].textContent.toLowerCase();
-            if (studentName.includes(searchValue)) {
-                studentItems[i].style.display = "block";
-            } else {
-                studentItems[i].style.display = "none";
+            if (fullName !== null && className !== null && gmail !== null) {
+                row.cells[0].textContent = fullName;
+                row.cells[1].textContent = className;
+                row.cells[2].textContent = gmail;
             }
         }
-    }
-</script>
+
+        function deleteStudent(row) {
+            var confirmDelete = confirm("Bạn có chắc muốn xóa sinh viên này?");
+
+            if (confirmDelete) {
+                row.remove();
+            }
+        }
+
+        function searchFunction() {
+            var searchValue = document.getElementById("search").value.toLowerCase();
+            var studentRows = document.getElementById("studentList").getElementsByTagName("tr");
+
+            for (var i = 1; i < studentRows.length; i++) {
+                var studentFullName = studentRows[i].cells[0].textContent.toLowerCase();
+                var studentClassName = studentRows[i].cells[1].textContent.toLowerCase();
+                var studentGmail = studentRows[i].cells[2].textContent.toLowerCase();
+
+                if (
+                    studentFullName.includes(searchValue) ||
+                    studentClassName.includes(searchValue) ||
+                    studentGmail.includes(searchValue)
+                ) {
+                    studentRows[i].style.display = "";
+                } else {
+                    studentRows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
